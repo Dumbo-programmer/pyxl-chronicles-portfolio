@@ -7,11 +7,11 @@
 
 .sectionTitle {
   font-size: 3.5em;
-  color: var(--color-dark-pink);
+  color: var(--color-primary-pink);
   margin-bottom: 60px;
   position: relative;
   display: inline-block;
-  text-shadow: 2px 2px 4px var(--color-shadow-light);
+  text-shadow: 0 0 15px rgba(220, 150, 190, 0.7);
 }
 
 .sectionTitle::after {
@@ -84,7 +84,7 @@
 
 .gameDescription {
   font-size: 1em;
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   margin-bottom: 15px;
   flex-grow: 1; /* Allows it to take up available space */
 }
@@ -98,7 +98,7 @@
 
 .tag {
   background-color: rgba(220, 150, 190, 0.2);
-  color: var(--color-dark-pink);
+  color: var(--color-primary-pink);
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.85em;

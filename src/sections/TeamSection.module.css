@@ -7,11 +7,32 @@
 
 .sectionTitle {
   font-size: 3.5em;
-  color: var(--color-dark-pink);
+  color: var(--color-primary-pink);
   margin-bottom: 60px;
   position: relative;
   display: inline-block;
-  text-shadow: 2px 2px 4px var(--color-shadow-light);
+  text-shadow: 0 0 15px rgba(220, 150, 190, 0.7);
+}
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px; /* spacing between icons */
+  color: var(--color-primary-pink);
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.socialLink:last-child {
+  margin-right: 0;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  color: var(--color-dark-pink);
+  transform: scale(1.2);
+  outline: none;
 }
 
 .sectionTitle::after {
@@ -48,7 +69,14 @@
   position: relative;
   overflow: hidden; /* For subtle background animation */
 }
+.socialLinksContainer {
+  display: flex;
+  justify-content: center; /* center icons */
+  gap: 12px; /* spacing between icons */
+  margin-top: 15px; /* optional spacing from other content */
+}
 
+/*
 .teamCard::before {
     content: '';
     position: absolute;
@@ -59,7 +87,7 @@
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-}
+}*/
 
 .teamCard:hover::before {
     opacity: 1;
@@ -91,7 +119,7 @@
 
 .memberRole {
   font-size: 1.1em;
-  color: var(--color-text-dark);
+  color: var(--color-primary-pink);
   display: flex;
   align-items: center;
   gap: 8px;

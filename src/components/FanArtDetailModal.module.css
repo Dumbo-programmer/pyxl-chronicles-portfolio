@@ -97,7 +97,7 @@
 .sectionIcon { /* Re-used from game modal, could be in global styles if preferred */
   margin-right: 8px;
   font-size: 1rem;
-  color: var(--color-dark-pink);
+  color: var(--color-text-light);
 }
 
 /* Responsive adjustments */

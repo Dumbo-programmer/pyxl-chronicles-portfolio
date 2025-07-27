@@ -1,0 +1,179 @@
+/* === HERO SECTION WRAPPER === */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
+  isolation: isolate; /* Allows z-index layering cleanly */
+}
+
+/* === BACKGROUND ELEMENTS === */
+.codeLine {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 8px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--color-shadow-light);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+.iconFloat {
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 0;
+  opacity: 0.4;
+  filter: blur(0.8px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.bgIcon {
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  width: 80px;
+  opacity: 0.08;
+  transform: rotate(-20deg);
+}
+
+.animatedPixel {
+  position: absolute;
+  filter: blur(0.6px);
+  opacity: 0.4;
+  z-index: 1;
+  animation: floatPixel 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatPixel {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(360deg); }
+}
+
+.animatedShape {
+  position: absolute;
+  background-color: transparent;
+  filter: blur(1.5px);
+  opacity: 0.2;
+  z-index: 0;
+  animation: floatShape 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatShape {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* === HERO CONTENT === */
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* === TITLE WITH GLOW AND GLITCH === */
+.mainTitle {
+  font-size: 3rem;
+  color: var(--color-text-light);
+  text-shadow: 0 0 15px var(--color-primary-pink), 0 0 30px var(--color-dark-pink);
+  letter-spacing: 3px;
+  line-height: 1;
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+/* Optional Glitch Animation */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  opacity: 0.8;
+  letter-spacing: 1px;
+  max-width: 800px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* === CALL TO ACTION BUTTON === */
+.ctaButton {
+  background: linear-gradient(90deg, var(--color-primary-pink), var(--color-dark-pink));
+  background-size: 200%;
+  color: var(--color-text-light);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 0 20px var(--color-primary-pink);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.6s ease;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.ctaButton:hover {
+  transform: scale(1.08);
+  background-position: right;
+  box-shadow: 0 0 25px var(--color-dark-pink), 0 0 50px var(--color-primary-pink);
+}
+
+/* Optional Pulse Effect on Hover */
+.ctaButton:focus-visible {
+  outline: 2px solid var(--color-primary-pink);
+}
+
+/* Icon Sizes */
+.buttonIcon {
+  font-size: 1.4rem;
+}
+.buttonIconRight {
+  font-size: 1.2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  .mainTitle { font-size: 2.5rem; }
+  .tagline { font-size: 1rem; }
+  .ctaButton { font-size: 0.9rem; padding: 12px 26px; }
+}
+
+@media (max-width: 768px) {
+  .heroSection { padding: 40px 20px; }
+  .mainTitle { font-size: 2rem; letter-spacing: 2px; }
+  .tagline { font-size: 0.9rem; max-width: 90%; }
+  .ctaButton { font-size: 0.85rem; padding: 10px 22px; gap: 10px; }
+  .buttonIcon { font-size: 1.2rem; }
+  .buttonIconRight { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .mainTitle { font-size: 1.6rem; text-shadow: 0 0 10px var(--color-primary-pink); letter-spacing: 1px; }
+  .tagline { font-size: 0.8rem; }
+  .ctaButton { font-size: 0.8rem; padding: 10px 20px; }
+}

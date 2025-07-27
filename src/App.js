@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+
 import LoadingScreen from './components/LoadingScreen';
+import HeroSection from './sections/HeroSection'; // Import the new HeroSection
 import TeamSection from './sections/TeamSection';
 import GameSection from './sections/GameSection';
 import GameDetailModal from './components/GameDetailModal';
 import FanArtSection from './sections/FanArtSection';
-import FanArtDetailModal from './components/FanArtDetailModal'; // Import the new modal
+import FanArtDetailModal from './components/FanArtDetailModal';
 import Footer from './components/Footer';
+import './index.css'; // Ensure global styles are applied
+
 
 import { teamMembersData, gamesData, fanArtsData } from './data/data';
 
@@ -15,12 +19,13 @@ import { teamMembersData, gamesData, fanArtsData } from './data/data';
 function App() {
   const [loading, setLoading] = useState(true);
   const [selectedGame, setSelectedGame] = useState(null);
-  const [selectedFanArt, setSelectedFanArt] = useState(null); // New state for fan art modal
+  const [selectedFanArt, setSelectedFanArt] = useState(null);
 
   useEffect(() => {
+    // Simulate loading time, adjust as needed
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2000); // 2 seconds loading screen
   }, []);
 
   const handleGameCardClick = (game) => {
@@ -31,7 +36,6 @@ function App() {
     setSelectedGame(null);
   };
 
-  // New handlers for Fan Art Modal
   const handleFanArtCardClick = (art) => {
     setSelectedFanArt(art);
   };
@@ -52,13 +56,13 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
+                <HeroSection /> {/* Include the HeroSection here */}
                 <section id="team">
                   <TeamSection teamMembers={teamMembersData} />
                 </section>
                 <section id="games">
                   <GameSection games={gamesData} onGameCardClick={handleGameCardClick} />
                 </section>
-                {/* Pass the new click handler to FanArtSection */}
                 <section id="fanart">
                   <FanArtSection fanArts={fanArtsData} onFanArtCardClick={handleFanArtCardClick} />
                 </section>
@@ -69,7 +73,6 @@ function App() {
           {selectedGame && (
             <GameDetailModal game={selectedGame} onClose={handleCloseGameDetail} />
           )}
-          {/* Render the new FanArtDetailModal */}
           {selectedFanArt && (
             <FanArtDetailModal art={selectedFanArt} onClose={handleCloseFanArtDetail} />
           )}

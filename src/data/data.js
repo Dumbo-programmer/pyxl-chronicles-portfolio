@@ -1,9 +1,25 @@
 // src/data/data.js
 
 const teamMembersData = [
-  { id: 1, name: 'Ren', role: 'Lead Programmer', avatar: 'ren.jpg' },
-  { id: 2, name: 'Therapist', role: 'Artist', avatar: 'therapist.jpg' },
-  { id: 3, name: 'Skittol', role: 'Artist', avatar: 'skittols.jpg' },
+  { id: 1, name: 'Ren', role: 'Lead Programmer',
+     avatar: 'ren.jpg',
+    social: [
+      { platform: "github", url: "https://github.com/Dumbo-Programmer" },
+      { platform: "instagram", url: "https://instagram.com/renisudesu" }
+    ]
+  },
+  { id: 2, name: 'Therapist', role: 'Artist',
+     avatar: 'therapist.jpg',
+      social: [
+  { platform: "instagram", url: "https://www.instagram.com/therapist_on_crack/" }
+]
+     },
+  { id: 3, name: 'Skittol', role: 'Artist',
+     avatar: 'skittols.jpg',
+    social: [
+  { platform: "instagram", url: "https://instagram.com/skittol._" }
+]
+   },
 ];
 
 const gamesData = [
@@ -11,7 +27,7 @@ const gamesData = [
     id: 1,
     title: 'The Quiet Hours',
     thumbnail: 'tqh1.png',
-    description: 'A retro 2D adventure game with challenging puzzles and charming pixel art. Explore a vast world, fight unique monsters, and uncover ancient secrets!',
+    description: 'You arrive at Bly Manor as the new governess, tasked with caring for two children. But something is wrong at Bly Manor. The children are not what they seem, and neither is the manor itself.',
     tags: ['Adventure', 'Horror', 'Psychological Horror', 'Single-player'],
     images: [
       './tqh1.png',

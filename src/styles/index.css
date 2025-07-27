@@ -21,7 +21,7 @@
 body {
   font-family: 'SF Pro Display', 'Roboto', sans-serif; /* Apple-like font stack */
   background-color: var(--color-background-light);
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scroll due to animations */
 }

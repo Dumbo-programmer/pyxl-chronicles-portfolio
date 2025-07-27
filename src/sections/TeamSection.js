@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBriefcase } from 'react-icons/fa'; // Icons
+import { FaBriefcase, FaTwitter, FaGithub, FaInstagram, FaGlobe } from 'react-icons/fa';
 import styles from './TeamSection.module.css';
 
 const sectionVariants = {
@@ -31,7 +31,9 @@ function TeamSection({ teamMembers }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.h2 variants={cardVariants} className={styles.sectionTitle}>Our Team</motion.h2>
+      <motion.h2 variants={cardVariants} className={styles.sectionTitle}>
+        Our Team
+      </motion.h2>
       <div className={styles.teamGrid}>
         {teamMembers.map(member => (
           <motion.div
@@ -43,7 +45,47 @@ function TeamSection({ teamMembers }) {
           >
             <img src={member.avatar} alt={member.name} className={styles.avatar} />
             <h3 className={styles.memberName}>{member.name}</h3>
-            <p className={styles.memberRole}><FaBriefcase className={styles.roleIcon} /> {member.role}</p>
+            <p className={styles.memberRole}>
+              <FaBriefcase className={styles.roleIcon} /> {member.role}
+            </p>
+
+            {/* Handle multiple social links (array) */}
+            {Array.isArray(member.social) ? (
+              <div className={styles.socialLinksContainer}>
+  {member.social?.map(({ platform, url }) => (
+    <a
+      key={platform}
+      href={url}
+      className={styles.socialLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${member.name}'s ${platform}`}
+    >
+      {platform === 'twitter' && <FaTwitter />}
+      {platform === 'github' && <FaGithub />}
+      {platform === 'instagram' && <FaInstagram />}
+      {platform === 'website' && <FaGlobe />}
+    </a>
+  ))}
+</div>
+
+            ) : (
+              // Single social link (object)
+              member.social?.url && (
+                <a
+                  href={member.social.url}
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name}'s ${member.social.platform}`}
+                >
+                  {member.social.platform === 'twitter' && <FaTwitter />}
+                  {member.social.platform === 'github' && <FaGithub />}
+                  {member.social.platform === 'instagram' && <FaInstagram />}
+                  {member.social.platform === 'website' && <FaGlobe />}
+                </a>
+              )
+            )}
           </motion.div>
         ))}
       </div>

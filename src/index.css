@@ -1,32 +1,40 @@
+/* src/styles/index.css (or where your global CSS variables are defined) */
+
 :root {
+  --color-primary-pink: #DC96BE; /* Brighter pink */
+  --color-dark-pink: #b64d8f;    /* Deeper pink */
+  --color-text-light: #F0F0F0;   /* Light gray for text */
+  --color-text-dark: #333333;    /* Dark text */
+  --color-background-dark: #1A0D1A; /* Very dark background */
+  --color-background-medium: #2C182B; /* Slightly lighter dark background */
+  --color-background-light: #4A3048; /* Even lighter */
+  --color-shadow-light: rgba(0, 0, 0, 0.1);
+  --color-shadow-medium: rgba(0, 0, 0, 0.3);
+  --color-shadow-dark: rgba(0, 0, 0, 0.5);
 
-  --color-background-light: #FAF8F0; /* Off-white from icon */
-  --color-primary-pink: #DC96BE; /* Dominant pink/purple from icon */
-  --color-dark-pink: #B46497; /* Darker pink/purple from icon */
-  --color-text-dark: #333; /* For general text */
-  --color-text-light: #fff; /* For text on darker backgrounds */
-  --color-card-background: rgba(255, 255, 255, 0.15); /* For glassmorphism */
-  --color-border-light: rgba(255, 255, 255, 0.3); /* For glassmorphism borders */
-  --color-shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow */
-  --color-shadow-medium: rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  /* New accent colors for animated elements */
+  --color-accent-blue: #64B4DC;  /* A bluish tone */
+  --color-accent-green: #97DC64; /* A greenish tone */
+  --color-accent-pink: #DC96BE;  /* Reusing primary pink for consistency */
 }
 
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* You might want to import a pixel font like 'Press Start 2P' from Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
 
 body {
-  font-family: 'SF Pro Display', 'Roboto', sans-serif; /* Apple-like font stack */
-  background-color: var(--color-background-light);
-  color: var(--color-text-dark);
-  line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Fallback for other text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+}
+hrml{}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/* If you use 'Press Start 2P' font, add it to your fonts folder or directly link in index.html */
+/* Or you can use @import like above */
+/* If you don't want a pixel font for all text, remove it from 'body' and only apply to specific elements like .mainTitle, .ctaButton */

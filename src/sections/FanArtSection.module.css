@@ -2,7 +2,6 @@
 
 .fanArtSection {
   padding: 80px 40px;
-  background-color: var(--color-background-light);
   text-align: center;
   overflow: hidden; /* Important for animation and layout */
 }
@@ -61,7 +60,7 @@
 }
 
 .fanArtArtist {
-  color: var(--color-primary-pink);
+  color: var(--color-text-light);
 
   font-size: 0.95rem;
   opacity: 0.8;

@@ -29,7 +29,7 @@
 .logo a {
     display: flex;
     align-items: center;
-    color: var(--color-text-dark);
+    color: var(--color-primary-pink);
     font-weight: 700;
     font-size: 1.5em;
     letter-spacing: 1px;
@@ -54,7 +54,7 @@
   gap: 8px;
   padding: 8px 15px;
   border-radius: 15px;
-  color: var(--color-text-dark);
+  color: var(--color-primary-pink);
   font-weight: 600;
   transition: all 0.2s ease-in-out;
   position: relative;
@@ -85,4 +85,61 @@
 
 .navIcon {
   font-size: 1.2em;
+}
+
+/* Existing header styles... */
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-primary-pink);
+  cursor: pointer;
+  z-index: 110;
+}
+
+/* Mobile Nav Menu */
+.mobileMenu {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: var(--color-card-background);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 8px 32px var(--color-shadow-medium);
+  padding: 20px 30px;
+  z-index: 99;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileMenu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary-pink);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px var(--color-shadow-light);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.mobileMenu li a:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Toggle */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

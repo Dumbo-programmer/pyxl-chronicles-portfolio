@@ -8,9 +8,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--color-background-light) 0%, #FFF 100%); /* Soft gradient */
+background-color: #faf8f0;
   z-index: 1000;
-  color: var(--color-dark-pink);
+  color: var(--color-primary-pink);
 }
 
 .iconWrapper {
@@ -34,7 +34,7 @@
 .loadingBarContainer {
   width: 300px;
   height: 8px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-primary-pink);
   border-radius: 5px;
   overflow: hidden;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
