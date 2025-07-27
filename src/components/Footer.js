@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaTwitter, FaDiscord, FaItchIo } from 'react-icons/fa'; // Social icons
+import { FaGithub, FaDiscord, FaItchIo } from 'react-icons/fa'; // Social icons
 import styles from './Footer.module.css';
 import { motion } from 'framer-motion';
 

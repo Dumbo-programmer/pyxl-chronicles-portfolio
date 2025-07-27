@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaUsers, FaGamepad, FaPaintBrush, FaHome } from 'react-icons/fa'; // Icons
+import { FaUsers, FaGamepad, FaPaintBrush } from 'react-icons/fa'; // Icons
 import styles from './Header.module.css';
 
 function Header() {

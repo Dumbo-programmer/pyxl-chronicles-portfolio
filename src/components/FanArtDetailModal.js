@@ -1,7 +1,7 @@
 // src/components/FanArtDetailModal.js
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaHeart, FaUserEdit } from 'react-icons/fa'; // Icons for modal
+import { FaTimes, FaUserEdit } from 'react-icons/fa'; // Icons for modal
 import styles from './FanArtDetailModal.module.css'; // <-- Add this line!
 // Re-using modal variants for consistency
 const modalVariants = {
