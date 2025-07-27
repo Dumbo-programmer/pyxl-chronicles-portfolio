@@ -1,0 +1,31 @@
+.footer {
+  background-color: rgba(220, 150, 190, 0.1); /* Light pink tint */
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--color-text-dark);
+  border-top: 1px solid rgba(220, 150, 190, 0.2);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.socialLinks {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.socialIcon {
+  font-size: 2em;
+  color: var(--color-dark-pink);
+  transition: color 0.3s ease-in-out;
+}
+
+.socialIcon:hover {
+  color: var(--color-primary-pink);
+}
+
+.copyright {
+  font-size: 0.9em;
+  color: var(--color-text-dark);
+  opacity: 0.8;
+}

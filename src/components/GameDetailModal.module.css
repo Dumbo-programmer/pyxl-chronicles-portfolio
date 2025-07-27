@@ -1,0 +1,225 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px); /* Glassmorphism blur */
+}
+
+.modalContent {
+  background: rgba(255, 255, 255, 0.1); /* Lighter glassmorphism background */
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh; /* Limit height to allow scrolling */
+  overflow-y: auto; /* Enable scrolling for content overflow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex; /* For icon centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.gameTitle {
+  color: var(--color-primary-pink);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(220, 150, 190, 0.5); /* Subtle glow */
+}
+
+.mediaContainer {
+  margin-bottom: 20px;
+  position: relative; /* Needed for absolute positioning of nav buttons */
+}
+
+/* New styles for image carousel */
+.imageCarousel {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust based on image aspect ratio */
+  display: flex; /* To center the image within the container */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide parts of image during slide animation */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gameImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block; /* Remove extra space below image */
+  object-fit: contain; /* Ensure image fits within bounds without cropping */
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10; /* Ensure buttons are above the image */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: 15px;
+}
+
+.nextButton {
+  right: 15px;
+}
+/* End new styles for image carousel */
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.detailSection {
+  margin-bottom: 15px;
+}
+
+.sectionHeading {
+  font-size: 1.4rem;
+  color: var(--color-dark-pink);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.sectionIcon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.gameDescription {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: rgba(220, 150, 190, 0.2); /* Semi-transparent primary pink */
+  color: var(--color-primary-pink);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid rgba(220, 150, 190, 0.4);
+}
+
+.downloadButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background-color: var(--color-primary-pink);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .gameTitle {
+    font-size: 2rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.2rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,32 @@
+/* src/styles/index.css */
+:root {
+  --color-background-light: #FAF8F0; /* Off-white from icon */
+  --color-primary-pink: #DC96BE; /* Dominant pink/purple from icon */
+  --color-dark-pink: #B46497; /* Darker pink/purple from icon */
+  --color-text-dark: #333; /* For general text */
+  --color-text-light: #fff; /* For text on darker backgrounds */
+  --color-card-background: rgba(255, 255, 255, 0.15); /* For glassmorphism */
+  --color-border-light: rgba(255, 255, 255, 0.3); /* For glassmorphism borders */
+  --color-shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  --color-shadow-medium: rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Display', 'Roboto', sans-serif; /* Apple-like font stack */
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,106 @@
+/* FanArtSection.module.css */
+
+.fanArtSection {
+  padding: 80px 40px;
+  background-color: var(--color-background-light);
+  text-align: center;
+  overflow: hidden; /* Important for animation and layout */
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  color: var(--color-primary-pink);
+  margin-bottom: 60px;
+  text-shadow: 0 0 15px rgba(220, 150, 190, 0.7);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.fanArtGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fanArtCard {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden; /* Crucial for images that object-fit: cover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes info to bottom if image is smaller */
+  cursor: pointer; /* Indicates it's clickable */
+}
+
+.fanArtImage {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent card appearance */
+  object-fit: cover; /* This is the key: image covers the area, cropping as needed */
+  display: block; /* Removes extra space below image */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.fanArtInfo {
+  padding: 20px;
+  text-align: left;
+  color: var(--color-text-light);
+}
+
+.fanArtTitle {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--color-primary-pink);
+  display: flex;
+  align-items: center;
+}
+
+.fanArtArtist {
+  color: var(--color-primary-pink);
+
+  font-size: 0.95rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+
+.artIcon {
+  margin-right: 8px;
+  color: var(--color-dark-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fanArtSection {
+    padding: 60px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+
+  .fanArtGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .fanArtImage {
+    height: 180px; /* Adjust height for smaller screens */
+  }
+
+  .fanArtTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fanArtGrid {
+    grid-template-columns: 1fr; /* Stack on very small screens */
+  }
+}

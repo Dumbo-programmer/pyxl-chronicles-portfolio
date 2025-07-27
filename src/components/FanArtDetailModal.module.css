@@ -1,0 +1,117 @@
+/* src/components/FanArtDetailModal.module.css */
+/* Re-using some base styles from GameDetailModal for consistency */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.modalContent {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 700px; /* Slightly smaller max-width if art is typically portrait */
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.artTitle { /* Specific style for fan art title */
+  color: var(--color-primary-pink);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(220, 150, 190, 0.5);
+}
+
+.artImageContainer {
+  width: 100%;
+  max-height: 60vh; /* Limit height for large images */
+  overflow: hidden; /* Hide scroll if image is too large */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex; /* For centering image if it doesn't fill */
+  justify-content: center;
+  align-items: center;
+}
+
+.expandedArtImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Ensure the full image is visible, no cropping */
+  border-radius: 10px;
+}
+
+.detailSection {
+  margin-top: 10px;
+  text-align: center; /* Center artist info */
+}
+
+.artArtist {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  opacity: 0.9;
+  display: flex;
+  justify-content: center; /* Center artist text */
+  align-items: center;
+}
+
+.sectionIcon { /* Re-used from game modal, could be in global styles if preferred */
+  margin-right: 8px;
+  font-size: 1rem;
+  color: var(--color-dark-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .artTitle {
+    font-size: 1.8rem;
+  }
+
+  .expandedArtImage {
+    max-height: 50vh; /* Adjust for smaller screens */
+  }
+}
