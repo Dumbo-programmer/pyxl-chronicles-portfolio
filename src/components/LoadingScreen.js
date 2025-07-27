@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GiGamepad, GiStarSwirl } from 'react-icons/gi'; // Example icons
+import { GiGamepad } from 'react-icons/gi'; // Example icons
 import styles from './LoadingScreen.module.css'; // Use CSS Modules
 
 const loadingVariants = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaUserCircle, FaBriefcase } from 'react-icons/fa'; // Icons
+import { FaBriefcase } from 'react-icons/fa'; // Icons
 import styles from './TeamSection.module.css';
 
 const sectionVariants = {
