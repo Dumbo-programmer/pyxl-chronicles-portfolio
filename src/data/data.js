@@ -2,8 +2,8 @@
 
 const teamMembersData = [
   { id: 1, name: 'Ren', role: 'Lead Programmer', avatar: 'ren.jpg' },
-  { id: 2, name: 'Therapist', role: 'Artist', avatar: 'https://via.placeholder.com/150/B46497/FFFFFF?text=BB' },
-  { id: 3, name: 'Skittols', role: 'Artist', avatar: 'https://via.placeholder.com/150/DC96BE/FFFFFF?text=CC' },
+  { id: 2, name: 'Therapist', role: 'Artist', avatar: 'therapist.jpg' },
+  { id: 3, name: 'Skittol', role: 'Artist', avatar: 'skittols.jpg' },
 ];
 
 const gamesData = [

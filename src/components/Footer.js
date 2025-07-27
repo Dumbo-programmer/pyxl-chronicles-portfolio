@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa'; // Social icons
+import { FaGithub, FaTwitter, FaDiscord, FaItchIo } from 'react-icons/fa'; // Social icons
 import styles from './Footer.module.css';
 import { motion } from 'framer-motion';
 
@@ -16,10 +16,10 @@ function Footer() {
           <FaGithub className={styles.socialIcon} />
         </motion.a>
         <motion.a href="#" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-          <FaTwitter className={styles.socialIcon} />
-        </motion.a>
-        <motion.a href="#" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
           <FaDiscord className={styles.socialIcon} />
+        </motion.a>
+        <motion.a href="https://pyxl-chronicles.itch.io" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <FaItchIo className={styles.socialIcon} />
         </motion.a>
       </div>
       <p className={styles.copyright}>&copy; {new Date().getFullYear()} Pyxl Chronicles. All rights reserved.</p>
