@@ -126,6 +126,9 @@ function GameDetailModal({ game, onClose }) {
           </div>
 
           <div className={styles.detailSection}>
+            <div>
+              <div dangerouslySetInnerHTML={{ __html: game.itchioembed }} />
+            </div>
             <h3 className={styles.sectionHeading}><FaDownload className={styles.sectionIcon} /> Downloads</h3>
             <div className={styles.downloadButtons}>
               {game.downloads.windows && (
